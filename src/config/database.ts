@@ -8,7 +8,7 @@ export const db = knex({
     connection: {
         host: 'localhost',
         port: 5433,
-        database: 'gestion_citas1',
+        database: 'gestion_citas',
         user: 'postgres',
         password: 'changeme',
     },

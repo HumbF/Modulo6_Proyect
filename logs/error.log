@@ -194,3 +194,7 @@
 2023-07-03T05:59:29.644Z-error: Failed get patient by id in repository1, error: database "gestion_citas1" does not exist
 2023-07-03T05:59:29.646Z-error: Failed to get patient from service
 2023-07-03T05:59:29.647Z-error: Failed getting patients from Service...
+2023-07-03T06:09:17.512Z-error: Failed get patient by id in repository1, error: database "gestion_citas1" does not exist
+2023-07-03T06:09:17.514Z-error: Failed to get patient from service
+2023-07-03T06:09:17.515Z-error: Failed getting patients from Service...
+2023-07-03T06:14:14.954Z-error: Record has not found yet
