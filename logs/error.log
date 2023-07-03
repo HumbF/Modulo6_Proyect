@@ -120,3 +120,77 @@
 2023-06-26T02:30:18.614Z-error: Unexpected token " in JSON at position 0
 2023-06-26T02:30:37.618Z-error: Unexpected token " in JSON at position 0
 2023-06-26T02:30:48.940Z-error: Unexpected token " in JSON at position 0
+2023-07-03T02:01:21.320Z-error: database "gestion_citas1" does not exist
+2023-07-03T02:01:21.322Z-error: Failed getting all appointments from service
+2023-07-03T02:22:08.860Z-error: Failed to create appointment from service
+2023-07-03T02:28:37.164Z-error: Failed to create appointment dubt: error: database "gestion_citas1" does not exist
+2023-07-03T02:28:37.166Z-error: Failed to create appointment dubt:  appointment creation GetAllError: Failed to create appointment dubt: error: database "gestion_citas1" does not exist
+2023-07-03T02:29:51.360Z-error: Failed to create appointment dubt:  appointment creation GetAllError: Failed to create appointment dubt: error: database "gestion_citas1" does not exist
+2023-07-03T02:33:20.906Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: database "gestion_citas1" does not exist
+2023-07-03T02:35:23.183Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: database "gestion_citas1" does not exist , appointment Creation Failed
+2023-07-03T02:37:13.805Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: database "gestion_citas1" does not exist
+2023-07-03T02:39:44.398Z-error: Failed to create appointment dubt: error: database "gestion_citas1" does not exist
+2023-07-03T02:39:44.399Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: database "gestion_citas1" does not exist
+2023-07-03T02:44:58.677Z-error: Id must be a number
+2023-07-03T02:45:36.826Z-error: Id must be a number
+2023-07-03T02:48:41.816Z-error: Id must be a number
+2023-07-03T02:50:34.246Z-error: Id must be a number
+2023-07-03T02:51:07.765Z-error: Id must be a number1
+2023-07-03T02:53:12.027Z-error: Id must be a number
+2023-07-03T02:53:30.104Z-error: Id must be a number
+2023-07-03T02:54:09.381Z-error: Id must be a number
+2023-07-03T02:54:20.208Z-error: Id must be a number
+2023-07-03T02:57:44.750Z-error: Failed get appointment by id in repository
+2023-07-03T02:57:44.752Z-error: Failed to get appointment from service
+2023-07-03T02:57:44.754Z-error: Failed to get Appointment by Id
+2023-07-03T03:00:05.151Z-error: Failed get appointment by id in repository
+2023-07-03T03:00:05.153Z-error: Failed to get appointment from service
+2023-07-03T03:00:05.155Z-error: Failed to get Appointment by Id
+2023-07-03T04:13:18.258Z-error: Id must be a number
+2023-07-03T04:13:37.517Z-error: database "gestion_citas1" does not exist
+2023-07-03T04:13:37.519Z-error: Failed getting all Doctors from service
+2023-07-03T04:15:40.473Z-error: Failed getting all Doctors from service
+2023-07-03T04:22:17.149Z-error: Failed get doctor by id in repository
+2023-07-03T04:22:17.150Z-error: Failed Getting Doctor by id in Repository
+2023-07-03T04:23:11.464Z-error: Failed get doctor by id in repository
+2023-07-03T04:23:11.466Z-error: Failed Getting Doctor by id in Repository
+2023-07-03T04:23:52.594Z-error: Failed get doctor by id in repository
+2023-07-03T04:23:52.595Z-error: Failed Getting Doctor by id in Repository
+2023-07-03T04:26:54.214Z-error: Failed get doctor by id in repository
+2023-07-03T04:26:54.216Z-error: Failed to get doctor from service
+2023-07-03T04:26:54.217Z-error: Failed Getting Doctor from Service
+2023-07-03T04:28:55.581Z-error: Failed get doctor by id in repository
+2023-07-03T04:28:55.582Z-error: Failed to get doctor from service
+2023-07-03T04:33:31.404Z-error: Failed get doctor by id in repository
+2023-07-03T04:33:31.407Z-error: Failed to update doctor from service
+2023-07-03T04:33:31.410Z-error: Failed to update doctor
+2023-07-03T04:33:55.474Z-error: Failed get doctor by id in repository
+2023-07-03T04:33:55.475Z-error: Failed to update doctor from service
+2023-07-03T04:33:55.476Z-error: Update not Accomplished from Service
+2023-07-03T04:36:46.968Z-error: Failed get doctor by id in repository1
+2023-07-03T04:36:46.969Z-error: Failed to update doctor from service
+2023-07-03T04:36:46.971Z-error: Update not Accomplished from Service
+2023-07-03T04:58:03.750Z-error: Failed get doctor by id in repository
+2023-07-03T04:58:03.752Z-error: Failed to delete doctor from service
+2023-07-03T04:58:03.754Z-error: Failed deleting doctor from Service
+2023-07-03T05:21:08.387Z-error: database "gestion_citas1" does not exist
+2023-07-03T05:24:49.632Z-error: database "gestion_citas1" does not exist
+2023-07-03T05:24:49.636Z-error: Failed getting all patients from service
+2023-07-03T05:25:28.432Z-error: database "gestion_citas1" does not exist
+2023-07-03T05:25:28.434Z-error: Failed getting all patients from service
+2023-07-03T05:29:56.721Z-error: database "gestion_citas1" does not exist
+2023-07-03T05:29:56.723Z-error: Failed getting all patients from service
+2023-07-03T05:40:02.253Z-error: database "gestion_citas1" does not exist
+2023-07-03T05:40:02.255Z-error: Failed to create patient dubt: error: database "gestion_citas1" does not exist
+2023-07-03T05:48:49.942Z-error: database "gestion_citas1" does not exist
+2023-07-03T05:48:49.943Z-error: Failed to create patient dubt: error: database "gestion_citas1" does not exist
+2023-07-03T05:48:49.946Z-error: Failed to create patient from service
+2023-07-03T05:56:44.023Z-error: Failed get patient by id in repository
+2023-07-03T05:56:44.025Z-error: Failed to get patient from service
+2023-07-03T05:56:44.026Z-error: Failed getting patients from Service...
+2023-07-03T05:58:14.171Z-error: Failed get patient by id in repository1
+2023-07-03T05:58:14.173Z-error: Failed to get patient from service
+2023-07-03T05:58:14.175Z-error: Failed getting patients from Service...
+2023-07-03T05:59:29.644Z-error: Failed get patient by id in repository1, error: database "gestion_citas1" does not exist
+2023-07-03T05:59:29.646Z-error: Failed to get patient from service
+2023-07-03T05:59:29.647Z-error: Failed getting patients from Service...

@@ -16,6 +16,6 @@ router.get('',  controller.getAllAppointment.bind(controller))
 router.post('/create',  controller.createAppointment.bind(controller))
 router.get('/:id',  controller.getAppointmentById.bind(controller))
 
-
+ 
 
 export default router

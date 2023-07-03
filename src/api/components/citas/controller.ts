@@ -17,17 +17,19 @@ export class AppointmentControllerImpl implements AppointmentController {
     constructor ( appointmentService: AppointmentService ){
         this.appointmentService = appointmentService
     }
+    /////////////////////////////////////////////
     public  async getAllAppointment(req: Request, res: Response): Promise<void> {
         try {
             const patients = await this.appointmentService.getAllAppointments()
             
             res.status(200).json(patients)
-            
+                
         } catch (error) {
             logger.error(error)
             res.status(400).json({message: "Error getting all appointments"})
         }
     }
+    ///////////////////////////////////////////////
     public  createAppointment (req: Request, res: Response): void {
         const appointmentReq = req.body
         this.appointmentService.createAppointment(appointmentReq)

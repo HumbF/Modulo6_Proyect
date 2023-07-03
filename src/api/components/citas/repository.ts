@@ -9,10 +9,10 @@ export class AppointmentRepository {
             const [createdAppointment] =  await db('citas').insert(appointment).returning('*') 
             return createdAppointment
         } catch (error) {
-            throw new DoctorCreationError(`Failed to create appointment dubt: ${error}`)
+            throw new GetAllError(`Failed to create appointment dubt: ${error}`," appointment")
         }
     }
-
+/////////////////////////////////////////////////////
     public async getAllAppointment(): Promise<Appointment[]> {
         try {
             return  db.select('*').from('citas1')
@@ -21,14 +21,14 @@ export class AppointmentRepository {
             throw new GetAllError("Failed getting all appointments from repository", "appointment")
         }
     }
-
+//////////////////////////////////////////////////////
     public async getAppointmentById(id: number): Promise<AppointmentResDB> {
         try{
             const appointment = await db('citas').where({ id_cita: id }).first()
             return appointment
         } catch (error){
             logger.error( 'Failed get appointment by id in repository', {error})
-            throw new RecordNotFoundError()
+            throw new GetAllError("Failed getting appointments by Id rep")
         }
     }
 }

@@ -1,4 +1,4 @@
-import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../config/customErrors"
+import {GetAllError, DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../config/customErrors"
 import logger from "../../../utils/logger"
 import { Doctor, DoctorReq } from "./model"
 import { DoctorRepository } from "./repository"
@@ -19,25 +19,32 @@ export class DoctorServiceImpl implements DoctorService {
         this.doctorRepository = doctorRepository
     }
 
-    public getAllDoctors(): Promise<Doctor[]> {
-        const doctors: Promise<Doctor[]> =  this.doctorRepository.getAllDoctors()
-        return doctors
+    public async getAllDoctors(): Promise<Doctor[]> {
+        try{
+            const doctors = await this.doctorRepository.getAllDoctors()
+            return doctors
+        }catch (error){
+            //logger.error(error)
+            throw new GetAllError("Failed getting all Doctors from service", "Doctors")
+        }
+       
     }
     
     public   createDoctor(doctorReq: DoctorReq): Promise<Doctor> {
         try{
             return this.doctorRepository.createDoctor(doctorReq)
         } catch (error){
-            throw new DoctorCreationError("Failed to create doctor from service")
+            throw new DoctorCreationError("Failed to create doctor from service") 
         }
     }
 
-    public getDoctorById(id: number): Promise<Doctor> {
-        try {
-            return this.doctorRepository.getDoctorById(id)
+    public async getDoctorById(id: number): Promise<Doctor> {
+        try { 
+            const doctorById = await this.doctorRepository.getDoctorById(id)
+            return doctorById
         } catch (error) {
             logger.error('Failed to get doctor from service')
-            throw new RecordNotFoundError()
+            throw new GetAllError("Failed Getting Doctor from Service")
         }
     }
 
@@ -52,7 +59,7 @@ export class DoctorServiceImpl implements DoctorService {
             return updateDoctor
         } catch (error) {
             logger.error('Failed to update doctor from service')
-            throw new DoctorUpdateError()
+            throw new GetAllError("Update not Accomplished from Service")
         }
     }
 
@@ -65,7 +72,7 @@ export class DoctorServiceImpl implements DoctorService {
             await this.doctorRepository.deleteDoctor(id)
         } catch (error) {
             logger.error('Failed to delete doctor from service')
-            throw new DoctorDeleteError()
+            throw new GetAllError("Failed deleting doctor from Service")
         }
     }
 }

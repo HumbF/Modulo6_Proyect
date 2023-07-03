@@ -1,4 +1,4 @@
-import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../config/customErrors"
+import {GetAllError, DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../config/customErrors"
 import logger from "../../../utils/logger"
 import { PatientReq, Patient } from "./model"
 import { PatientRepository } from "./repository"
@@ -17,25 +17,35 @@ export class PatientServiceImpl implements PatientService {
         this.patientRepository = patientRepository
     }
 
-    public getAllPatients(): Promise<Patient[]> {
-        const patients: Promise<Patient[]> =  this.patientRepository.getAllPatients()
-        return patients
+    public async getAllPatients(): Promise<Patient[]> {
+        try{
+            const patients= await  this.patientRepository.getAllPatients()
+            return patients
+        }catch(error){
+            logger.error(error)
+            throw new GetAllError("Failed getting all patients from service")
+
+        }
+        
     }
     
-    public   createPatient(patientReq: PatientReq): Promise<Patient> {
+    public  async createPatient(patientReq: PatientReq): Promise<Patient> {
         try{
-            return this.patientRepository.createPatient(patientReq)
+            const createPat = await this.patientRepository.createPatient(patientReq)
+            return createPat
         } catch (error){
-            throw new DoctorCreationError("Failed to create patient from service")
+            logger.error(error)
+            throw new GetAllError("Failed to create patient from service")
         }
     }
 
-    public getPatientById(id: number): Promise<Patient> {
+    public async getPatientById(id: number): Promise<Patient> {
         try {
-            return this.patientRepository.getPatientById(id)
+            const getPatients = await this.patientRepository.getPatientById(id)
+            return getPatients
         } catch (error) {
             logger.error('Failed to get patient from service')
-            throw new RecordNotFoundError()
+            throw new GetAllError("Failed getting patients from Service...")
         }
     }
 

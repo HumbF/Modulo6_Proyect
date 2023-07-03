@@ -42,9 +42,9 @@ class RecordNotFoundError extends Error {
 
 
 class GetAllError extends Error {
-    constructor(message: string, componentName?: string){
+    constructor(message: string, componentName?: string){//Message to show as arg,C_n 
         super(message)
-        this.name = `${componentName}GetAllError`
+        this.name = `${componentName} GetAllError`//name of the error from Error
     }
 }
 

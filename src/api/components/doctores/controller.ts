@@ -20,15 +20,20 @@ export class DoctorControllerImpl implements DoctorController {
     constructor ( doctorService: DoctorService ){
         this.doctorService = doctorService
     }
+/////////////////////   GET ALL DOCTORS   ////////////////////////
+
     public  async getAllDoctors(req: Request, res: Response): Promise<void> {
         try {
             const doctors = await this.doctorService.getAllDoctors()
             res.status(200).json(doctors)
             
         } catch (error) {
+            logger.error(error)
             res.status(400).json({message: "Error getting all doctors"})
         }
     }
+/////////////////////   CREATED ALL DOCTORS   ////////////////////////
+
     public  createDoctor (req: Request, res: Response): void {
     
         const {error, value } = createDoctorSchema.validate(req.body)

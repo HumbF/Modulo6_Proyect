@@ -41,7 +41,8 @@ export class AppointmentServiceImpl implements AppointmentService {
             const appointment: Appointment = mapAppointment(appointmentDb, doctor)
             return appointment
         } catch (error){
-            throw new DoctorCreationError("Failed to create appointment from service")
+            logger.error(error)
+            throw new GetAllError(`Failed to create appointment dubt: ${error}`," appointment creation")
         }
     }
 
@@ -53,7 +54,7 @@ export class AppointmentServiceImpl implements AppointmentService {
             return appointment
         } catch (error) {
             logger.error('Failed to get appointment from service')
-            throw new RecordNotFoundError()
+            throw new GetAllError("Failed to get Appointment by Id")
         }
     }
 
