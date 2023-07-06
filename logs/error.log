@@ -298,3 +298,9 @@
 2023-07-06T13:18:14.261Z-error: Failed to get Appointment by Id
 2023-07-06T13:19:39.075Z-error: Failed to get appointment from service
 2023-07-06T13:19:39.077Z-error: Failed to get Appointment by Id
+2023-07-06T15:04:33.085Z-error: insert into "pacientes" ("apellido", "identificacion", "nombre", "telefono") values ($1, $2, $3, $4) returning * - value "3132569654" is out of range for type integer
+2023-07-06T15:04:33.087Z-error: Failed to create patient dubt: error: insert into "pacientes" ("apellido", "identificacion", "nombre", "telefono") values ($1, $2, $3, $4) returning * - value "3132569654" is out of range for type integer
+2023-07-06T15:04:33.090Z-error: Failed to create patient from service
+2023-07-06T15:04:38.181Z-error: insert into "pacientes" ("apellido", "identificacion", "nombre", "telefono") values ($1, $2, $3, $4) returning * - value "3132569654" is out of range for type integer
+2023-07-06T15:04:38.183Z-error: Failed to create patient dubt: error: insert into "pacientes" ("apellido", "identificacion", "nombre", "telefono") values ($1, $2, $3, $4) returning * - value "3132569654" is out of range for type integer
+2023-07-06T15:04:38.185Z-error: Failed to create patient from service

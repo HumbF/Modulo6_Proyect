@@ -107,7 +107,7 @@ export class AppointmentServiceImpl implements AppointmentService {
       
     } catch (error) {
       logger.error("Failed to delete appointment from service");
-      throw new GetAllError("Failed to get Appointment by Id");
+      throw new GetAllError("Failed to delete Appointment by Id");
     }
   }
 

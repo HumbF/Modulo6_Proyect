@@ -7,6 +7,7 @@ import {
   DoctorDeleteError,
   DoctorGetAllError,
   DoctorUpdateError,
+  GetAllError,
   RecordNotFoundError,
 } from "../../../utils/customErrors";
 
@@ -14,6 +15,8 @@ export interface PatientController {
   getAllPatient(req: Request, res: Response): void;
   createPatient(req: Request, res: Response): void;
   getPatientById(req: Request, res: Response): void;
+  updatePatientById(req: Request, res: Response): Promise<void>;
+  deletePatient(req: Request, res: Response): Promise<void>;
 }
 
 export class PatientControllerImpl implements PatientController {
@@ -82,8 +85,44 @@ export class PatientControllerImpl implements PatientController {
 
 
     /////////////////////////////Update Patients by Id /////////////////
-   
+    public async updatePatientById(req: Request, res: Response): Promise<void> {
+      try {
+        const id = parseInt(req.params.id);
+        const patientReq = req.body
+        const patient = await this.patientService.updatePatientById(id, patientReq)
+             
+        if (patient) {
+          res.status(200).json(patient);
+        } else {
+          throw new GetAllError("Failed to Update Patient from Controller");
+        }
+      } catch (error) {
+        logger.error(error);
+        if (error instanceof RecordNotFoundError) {
+          res.status(400).json({ error: error.message });
+        } else {
+          res.status(400).json({ error: "Failed to retrieve patient Updates" });
+        }
+      }
+    }
    
     /////////////////////////////Delete Patients by Id /////////////////
-
+    public async deletePatient(req: Request, res: Response): Promise<void> {
+      try {
+        const id = parseInt(req.params.id);
+        if (isNaN(id)) {
+          throw new Error("Id must be a number");
+        }
+        await this.patientService.deletePatient(id);
+        res.status(200).json({message: "Patient was deleted successfully"});
+       
+      } catch (error) {
+        logger.error(error);
+        if (error instanceof RecordNotFoundError) {
+          res.status(400).json({ error: error.message });
+        } else {
+          res.status(400).json({ error: "Failed to retrieve patient" });
+        }
+      }
+    }
 }

@@ -28,7 +28,7 @@ export class PatientRepository {
       throw new GetAllError("Action not Performed, get all patients failed");
     }
   }
-
+////////////////////////////////////////////////
   public async getPatientById(id: number): Promise<Patient> {
     try {
       const patient = await db("pacientes").where({ id_paciente: id }).first();
@@ -36,6 +36,28 @@ export class PatientRepository {
     } catch (error) {
       logger.error(`Failed get patient by id in repository1, ${error}`);
       throw new GetAllError("Failed getting Patients in Repository");
+    }
+  }
+
+  ////////////////////////////////////////////////
+  public async updatePatientById(id: number, updates: Partial<PatientReq>): Promise<void> {
+    try {
+      await db("pacientes").where({ id_paciente: id }).update(updates);
+     
+    } catch (error) {
+      logger.error(`Failed Update patient by id in repository, ${error}`);
+      throw new GetAllError("Failed Update Patients in Repository");
+    }
+  }
+
+  ////////////////////////////////////////////////
+  public async  deletePatient(id: number): Promise<void> {
+    try {
+      await db("pacientes").where({ id_paciente: id }).del();
+      
+    } catch (error) {
+      logger.error(`Failed delete patient in repository, ${error}`);
+      throw new GetAllError("Failed deleting Patients in Repository");
     }
   }
 }
