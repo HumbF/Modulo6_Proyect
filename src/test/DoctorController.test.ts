@@ -59,12 +59,7 @@ describe('DoctorController', () => {
         it('should create a new doctor and return info', async () => {
             // Mock Process
             const doctorRes: Doctor = { id_doctor: 1, nombre: 'Jonathan', apellido: 'Vanegas', especialidad: 'Medicina General', consultorio: 100 }
-            const doctorReq: DoctorReq = {
-                nombre: 'Jonathan',
-                apellido: 'Vanegas',
-                especialidad: 'Medicina General',
-                consultorio: 100
-            };
+            const doctorReq: DoctorReq = {nombre: 'Jonathan', apellido: 'Vanegas', especialidad: 'Medicina General', consultorio: 100};
             (mockReq.body as DoctorReq) = doctorReq;
             (doctorSerivce.createDoctor as jest.Mock).mockResolvedValue(doctorRes)
 

@@ -3,7 +3,7 @@ import {
   DoctorCreationError,
   DoctorDeleteError,
   DoctorUpdateError,
-  RecordNotFoundError,
+  RecordNotFoundError
 } from "../../../utils/customErrors";
 import logger from "../../../utils/logger";
 import { Doctor, DoctorReq } from "./model";

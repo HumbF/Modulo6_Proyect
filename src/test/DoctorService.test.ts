@@ -104,7 +104,7 @@ describe('DoctorService', () => {
         it('should throw an error if retrieval fails', async () => {
             // Mock Process
             const doctorId = 1
-            const error = new Error('Database error');
+            const error = new Error('Failed Getting Doctor from Service');
             (doctorRepository.getDoctorById as jest.Mock).mockRejectedValue(error)
 
             // Asserts

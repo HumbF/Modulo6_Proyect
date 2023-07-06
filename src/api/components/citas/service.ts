@@ -15,6 +15,8 @@ export interface AppointmentService {
   getAllAppointments(): Promise<Appointment[]>;
   createAppointment(patientReq: AppointmentReq): Promise<Appointment>;
   getAppointmentById(id: number): Promise<Appointment>;
+  updateAppointmentById(id: number, updates: Partial<AppointmentReq>): Promise<AppointmentReq>;
+
 }
 
 export class AppointmentServiceImpl implements AppointmentService {
@@ -32,14 +34,11 @@ export class AppointmentServiceImpl implements AppointmentService {
   public async getAllAppointments(): Promise<Appointment[]> {
     try {
       const patients = await this.appointmentRepository.getAllAppointment();
-      console.log("LLEgamos");
-      console.log(patients);
       return patients;
     } catch (error) {
       logger.error(error);
       throw new GetAllError(
-        "Failed getting all appointments from service",
-        "appointment"
+        "Failed getting all appointments from service"
       );
     }
   }
@@ -75,6 +74,22 @@ export class AppointmentServiceImpl implements AppointmentService {
       );
       const appointment: Appointment = mapAppointment(appointmentDb, doctor);
       return appointment;
+    } catch (error) {
+      logger.error("Failed to get appointment from service");
+      throw new GetAllError("Failed to get Appointment by Id");
+    }
+  }
+
+  public async updateAppointmentById(id: number, updates:Partial<AppointmentReq>): Promise<AppointmentReq> {
+    try {
+        const existAppointment = await this.appointmentRepository.getAppointmentById(id);
+        if(!existAppointment){
+            throw new RecordNotFoundError()
+        }
+       
+        const updateAppointment = {...existAppointment, ...updates}
+        this.appointmentRepository.updateAppointmentById(id,updateAppointment)
+        return updateAppointment
     } catch (error) {
       logger.error("Failed to get appointment from service");
       throw new GetAllError("Failed to get Appointment by Id");

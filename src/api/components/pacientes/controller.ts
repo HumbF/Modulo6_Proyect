@@ -22,6 +22,7 @@ export class PatientControllerImpl implements PatientController {
   constructor(patientService: PatientService) {
     this.patientService = patientService;
   }
+  /////////////////////////////Get All Patients /////////////////
   public async getAllPatient(req: Request, res: Response): Promise<void> {
     try {
       const patients = await this.patientService.getAllPatients();
@@ -31,6 +32,9 @@ export class PatientControllerImpl implements PatientController {
       res.status(400).json({ message: "Error getting all patients" });
     }
   }
+
+    /////////////////////////////Create  Patients /////////////////
+
   public createPatient(req: Request, res: Response): void {
     const patientReq = req.body;
     this.patientService.createPatient(patientReq).then(
@@ -52,6 +56,7 @@ export class PatientControllerImpl implements PatientController {
       }
     );
   }
+  /////////////////////////////Get Patients by Id /////////////////
 
   public async getPatientById(req: Request, res: Response): Promise<void> {
     try {
@@ -74,4 +79,11 @@ export class PatientControllerImpl implements PatientController {
       }
     }
   }
+
+
+    /////////////////////////////Update Patients by Id /////////////////
+   
+   
+    /////////////////////////////Delete Patients by Id /////////////////
+
 }

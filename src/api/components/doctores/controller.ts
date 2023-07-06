@@ -65,6 +65,9 @@ export class DoctorControllerImpl implements DoctorController {
     }
   }
 
+
+    /////////////////////   GET DOCTORS BY ID  ////////////////////////
+
   public async getDoctorById(req: Request, res: Response): Promise<void> {
     try {
       const id = parseInt(req.params.id);
@@ -83,6 +86,9 @@ export class DoctorControllerImpl implements DoctorController {
       }
     }
   }
+
+
+    /////////////////////   UPDATE  DOCTORS   ////////////////////////
 
   public async updateDoctor(req: Request, res: Response): Promise<void> {
     try {
@@ -105,6 +111,9 @@ export class DoctorControllerImpl implements DoctorController {
       }
     }
   }
+
+
+    /////////////////////   DELETE DOCTORS   ////////////////////////
 
   public async deleteDoctor(req: Request, res: Response): Promise<void> {
     try {

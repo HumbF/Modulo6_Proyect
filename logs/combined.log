@@ -326,3 +326,106 @@ undefined [undefined] info: Accept,*/*,User-Agent,node-fetch/1.0 (+https://githu
 2023-07-03T06:09:17.515Z-error: Failed getting patients from Service...
 2023-07-03T06:11:53.684Z-info: Server is listening on port 8087
 2023-07-03T06:14:14.954Z-error: Record has not found yet
+2023-07-03T12:25:17.334Z-info: Server is listening on port 8087
+2023-07-03T12:25:24.573Z-error: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor", "identificacion_paciente") values ($1, $2, $3, $4) returning * - insert or update on table "citas" violates foreign key constraint "fk_pacientes"
+2023-07-03T12:25:24.575Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor", "identificacion_paciente") values ($1, $2, $3, $4) returning * - insert or update on table "citas" violates foreign key constraint "fk_pacientes"
+2023-07-03T12:44:56.036Z-error: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T12:44:56.039Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:07:51.296Z-info: Server is listening on port 8087
+2023-07-03T13:08:24.566Z-error: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:08:24.569Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:08:35.843Z-error: Cannot read properties of undefined (reading 'nombre')
+2023-07-03T13:08:35.845Z-error: Failed to create appointment dubt: TypeError: Cannot read properties of undefined (reading 'nombre')
+2023-07-03T13:14:56.692Z-info: Server is listening on port 8087
+2023-07-03T13:16:42.365Z-info: Server is listening on port 8087
+2023-07-03T13:22:09.090Z-error: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:22:09.093Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:26:56.553Z-info: Server is listening on port 8087
+2023-07-03T13:27:06.474Z-error: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:27:06.476Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:27:30.481Z-error: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:27:30.484Z-error: Failed to create appointment dubt:  appointment GetAllError: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor") values ($1, $2, $3) returning * - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-03T13:30:00.468Z-info: Server is listening on port 8087
+2023-07-03T21:45:17.305Z-error: Failed to get doctor from service
+2023-07-03T21:45:17.732Z-error: Internal Server Error
+2023-07-03T21:45:17.799Z-error: Record has not found yet
+2023-07-03T21:45:17.805Z-error: Internal Server Error
+2023-07-03T21:54:08.366Z-error: Failed to get doctor from service
+2023-07-03T21:54:08.945Z-error: Internal Server Error
+2023-07-03T21:54:08.990Z-error: Record has not found yet
+2023-07-03T21:54:08.994Z-error: Internal Server Error
+2023-07-03T21:55:34.531Z-error: Internal Server Error
+2023-07-03T21:55:34.609Z-error: Record has not found yet
+2023-07-03T21:55:34.617Z-error: Internal Server Error
+2023-07-03T21:55:34.922Z-error: Failed to get doctor from service
+2023-07-03T22:00:12.933Z-error: Failed to get doctor from service
+2023-07-03T22:00:14.156Z-error: Internal Server Error
+2023-07-03T22:00:14.201Z-error: Record has not found yet
+2023-07-03T22:00:14.205Z-error: Internal Server Error
+2023-07-03T22:05:01.347Z-error: Failed to get doctor from service
+2023-07-03T22:05:02.257Z-error: Internal Server Error
+2023-07-03T22:05:02.300Z-error: Record has not found yet
+2023-07-03T22:05:02.304Z-error: Internal Server Error
+2023-07-03T22:08:30.847Z-error: Failed to get doctor from service
+2023-07-03T22:08:31.846Z-error: Internal Server Error
+2023-07-03T22:08:31.888Z-error: Record has not found yet
+2023-07-03T22:08:31.893Z-error: Internal Server Error
+2023-07-03T22:11:18.912Z-error: Failed to get doctor from service
+2023-07-03T22:11:19.912Z-error: Internal Server Error
+2023-07-03T22:11:19.953Z-error: Record has not found yet
+2023-07-03T22:11:19.958Z-error: Internal Server Error
+2023-07-03T22:11:41.085Z-error: Failed to get doctor from service
+2023-07-03T22:11:41.952Z-error: Internal Server Error
+2023-07-03T22:11:41.994Z-error: Record has not found yet
+2023-07-03T22:11:41.998Z-error: Internal Server Error
+2023-07-03T22:14:17.804Z-error: Failed to get doctor from service
+2023-07-03T22:14:18.797Z-error: Internal Server Error
+2023-07-03T22:14:18.851Z-error: Record has not found yet
+2023-07-03T22:14:18.855Z-error: Internal Server Error
+2023-07-03T23:24:51.572Z-error: Internal Server Error
+2023-07-03T23:24:51.659Z-error: Record has not found yet
+2023-07-03T23:24:51.666Z-error: Internal Server Error
+2023-07-03T23:24:52.698Z-error: Failed to get doctor from service
+2023-07-04T04:06:07.097Z-error: Internal Server Error
+2023-07-04T04:06:07.180Z-error: Record has not found yet
+2023-07-04T04:06:07.197Z-error: Internal Server Error
+2023-07-04T04:06:07.744Z-error: Failed to get doctor from service
+2023-07-04T04:08:35.368Z-error: Internal Server Error
+2023-07-04T04:08:35.437Z-error: Record has not found yet
+2023-07-04T04:08:35.443Z-error: Internal Server Error
+2023-07-04T04:08:35.855Z-error: Failed to get doctor from service
+2023-07-04T04:09:46.823Z-error: Internal Server Error
+2023-07-04T04:09:46.904Z-error: Record has not found yet
+2023-07-04T04:09:46.913Z-error: Internal Server Error
+2023-07-04T04:09:47.256Z-error: Failed to get doctor from service
+2023-07-04T04:12:45.836Z-error: Failed to get doctor from service
+2023-07-04T04:12:46.161Z-error: Internal Server Error
+2023-07-04T04:12:46.205Z-error: Record has not found yet
+2023-07-04T04:12:46.209Z-error: Internal Server Error
+2023-07-04T04:33:37.735Z-error: Internal Server Error
+2023-07-04T04:33:37.811Z-error: Record has not found yet
+2023-07-04T04:33:37.817Z-error: Internal Server Error
+2023-07-04T04:33:38.289Z-error: Failed to get doctor from service
+2023-07-05T16:10:42.157Z-error: Internal Server Error
+2023-07-05T16:10:42.266Z-error: Record has not found yet
+2023-07-05T16:10:42.278Z-error: Internal Server Error
+2023-07-05T16:10:42.971Z-error: Failed to get doctor from service
+2023-07-05T16:16:49.324Z-error: Failed to get doctor from service
+2023-07-05T16:16:49.200Z-error: Internal Server Error
+2023-07-05T16:16:49.289Z-error: Record has not found yet
+2023-07-05T16:16:49.303Z-error: Internal Server Error
+2023-07-05T16:19:58.523Z-error: Failed to get doctor from service
+2023-07-05T16:19:58.873Z-error: Internal Server Error
+2023-07-05T16:19:58.991Z-error: Record has not found yet
+2023-07-05T16:19:59.011Z-error: Internal Server Error
+2023-07-05T16:22:34.247Z-info: Server is listening on port 8087
+2023-07-05T16:22:39.982Z-error: Failed to get appointment from service
+2023-07-05T16:22:39.984Z-error: Failed to get Appointment by Id
+2023-07-05T16:23:31.586Z-error: select * from "citas1" - relation "citas1" does not exist
+2023-07-05T16:23:31.588Z-error: Failed getting all appointments from service
+2023-07-05T16:25:32.720Z-error: select * from "citas1" - relation "citas1" does not exist
+2023-07-05T16:25:32.722Z-error: Failed getting all appointments from service
+2023-07-05T16:27:45.456Z-info: Server is listening on port 8087
+2023-07-05T16:27:58.700Z-error: Failed to get appointment from service
+2023-07-05T16:27:58.701Z-error: Failed to get Appointment by Id
+2023-07-05T16:30:59.552Z-info: Server is listening on port 8087

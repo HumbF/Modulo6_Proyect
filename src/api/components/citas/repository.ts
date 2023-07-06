@@ -27,7 +27,7 @@ export class AppointmentRepository {
   /////////////////////////////////////////////////////
   public async getAllAppointment(): Promise<Appointment[]> {
     try {
-      return db.select("*").from("citas1");
+      return db.select("*").from("citas");
     } catch (error) {
       throw new GetAllError(
         "Failed getting all appointments from repository",
@@ -35,7 +35,7 @@ export class AppointmentRepository {
       );
     }
   }
-  //////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////
   public async getAppointmentById(id: number): Promise<AppointmentResDB> {
     try {
       const appointment = await db("citas").where({ id_cita: id }).first();
@@ -45,4 +45,16 @@ export class AppointmentRepository {
       throw new GetAllError("Failed getting appointments by Id rep");
     }
   }
+
+  //////////////////////////////////////////////
+
+  public async updateAppointmentById(id: number, updates : Partial<Appointment>): Promise<void> {
+    try {
+      await db("citas").where({ id_cita: id }).update(updates);
+    } catch (error) {
+      logger.error("Failed update appointment by id in repository", { error });
+      throw new GetAllError("Failed updating appointments by Id rep");
+    }
+  }
+
 }
