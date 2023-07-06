@@ -46,6 +46,14 @@ class GetAllError extends Error {
         super(message)
         this.name = `${componentName} GetAllError`//name of the error from Error
     }
+    
+}
+
+class AppointmentDeleteError extends Error {
+    constructor(){
+        super("Failed to delete Appointment")
+        this.name = "AppointmentDeleteError"
+    }
 }
 
 export {
@@ -54,6 +62,7 @@ export {
     RecordNotFoundError,
     DoctorUpdateError,
     DoctorDeleteError,
+    AppointmentDeleteError,
     PatientGetAllError,
     GetAllError
 }

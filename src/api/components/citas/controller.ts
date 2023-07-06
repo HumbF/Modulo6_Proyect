@@ -9,6 +9,7 @@ import {
   DoctorUpdateError,
   RecordNotFoundError,
   GetAllError,
+  AppointmentDeleteError,
 } from "../../../utils/customErrors";
 import createPatientShecma from "./validations/cita.validations";
 
@@ -17,6 +18,7 @@ export interface AppointmentController {
   createAppointment(req: Request, res: Response): void;
   getAppointmentById(req: Request, res: Response): void;
   updateAppointmentById(req: Request, res: Response): void;
+  deleteAppointmentById(req: Request, res: Response): void;
 }
 
 export class AppointmentControllerImpl implements AppointmentController {
@@ -82,7 +84,7 @@ export class AppointmentControllerImpl implements AppointmentController {
       if (error instanceof RecordNotFoundError) {
         res.status(400).json({ error: error.message });
       } else {
-        res.status(400).json({ error: "Failed to retrieve patient" });
+        res.status(400).json({ error: "Failed to retrieve Appoitnment" });
       }
     }
   }
@@ -103,8 +105,30 @@ export class AppointmentControllerImpl implements AppointmentController {
       if (error instanceof RecordNotFoundError) {
         res.status(400).json({ error: error.message });
       } else {
-        res.status(400).json({ error: "Failed to update patient" });
+        res.status(400).json({ error: "Failed to update appointment" });
       }
     }
   }
+
+
+  
+///////////////////////////////////////
+public async deleteAppointmentById(req: Request, res: Response): Promise<void> {
+  try {
+    const id = parseInt(req.params.id);
+    if (isNaN(id)) {
+      throw new Error("Id must be a number");
+    }
+    await this.appointmentService.deleteAppointmentById(id);
+    res.status(200).json({message: "Appointment was deleted successfully"});
+    
+  } catch (error) {
+    logger.error(error);
+    if (error instanceof AppointmentDeleteError) {
+      res.status(400).json({ error: error.message });
+    } else {
+      res.status(400).json({ error: "Failed to delete Appointment" });
+    }
+  }
+}
 }

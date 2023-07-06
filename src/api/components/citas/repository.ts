@@ -6,6 +6,7 @@ import {
   PatientGetAllError,
   RecordNotFoundError,
   GetAllError,
+  AppointmentDeleteError,
 } from "../../../utils/customErrors";
 
 export class AppointmentRepository {
@@ -56,5 +57,18 @@ export class AppointmentRepository {
       throw new GetAllError("Failed updating appointments by Id rep");
     }
   }
+
+  //////////////////////////////////////////////
+
+  public async deleteAppointmentById(id: number): Promise<void> {
+    try {
+      await db("citas").where({ id_cita: id }).del();
+    } catch (error) {
+      logger.error("Failed delete appointment by id in repository", { error });
+      throw new AppointmentDeleteError();
+    }
+  }
+
+  
 
 }

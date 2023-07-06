@@ -16,6 +16,7 @@ export interface AppointmentService {
   createAppointment(patientReq: AppointmentReq): Promise<Appointment>;
   getAppointmentById(id: number): Promise<Appointment>;
   updateAppointmentById(id: number, updates: Partial<AppointmentReq>): Promise<AppointmentReq>;
+  deleteAppointmentById(id: number): Promise<void>
 
 }
 
@@ -95,6 +96,23 @@ export class AppointmentServiceImpl implements AppointmentService {
       throw new GetAllError("Failed to get Appointment by Id");
     }
   }
+
+  public async deleteAppointmentById(id: number): Promise<void> {
+    try {
+      const appointmentDb = await this.appointmentRepository.getAppointmentById(id);
+      if(!appointmentDb){
+        throw new RecordNotFoundError()
+    }
+     await this.appointmentRepository.deleteAppointmentById(id);
+      
+    } catch (error) {
+      logger.error("Failed to delete appointment from service");
+      throw new GetAllError("Failed to get Appointment by Id");
+    }
+  }
+
+
+
 }
 
 function mapAppointment(
